@@ -11,10 +11,10 @@ import (
 )
 
 const (
-	host     = "95.111.195.37"
+	host     = "localhost"
 	port     = "3306"
 	user     = "root"
-	password = "raudahmadinah"
+	password = ""
 	dbName   = "medioker_crud"
 	addRedis = "localhost:6379"
 )
