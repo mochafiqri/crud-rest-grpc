@@ -1,0 +1,50 @@
+syntax="proto3";
+package content;
+
+option go_package="/proto_gen";
+
+service ContentService {
+  rpc Create(Content) returns (ContentResp);
+  rpc Read(Empty) returns (ContentsResp);
+  rpc Get(Id) returns (ContentResp);
+  rpc Update(Content) returns (ContentResp);
+  rpc Delete(Id) returns (Resp);
+}
+
+
+message Content {
+  string id = 1;
+  string title = 2;
+  string body = 3;
+  string created_at = 4;
+  string updated_at = 5;
+}
+
+message Resp {
+  int32 code = 1;
+  string status = 2;
+}
+
+message ContentResp {
+  int32 code = 1;
+  string status = 2;
+  Content data = 3;
+}
+
+message ContentsResp {
+  int32 code = 1;
+  string status = 2;
+  repeated Content data = 3;
+}
+
+message Id {
+  string
+      id = 1;
+}
+
+message Empty{}
+
+
+
+
+
